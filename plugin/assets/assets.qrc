@@ -1,0 +1,19 @@
+<RCC>
+     <qresource prefix="assets/">
+          <file>profiles/en_UK.json</file>
+          <file>profiles/symbol.json</file>
+          <file>profiles/symbol2.json</file>
+
+          <file>profiles/retro/en_UK.json</file>
+          <file>profiles/retro/symbol.json</file>
+          <file>profiles/retro/symbol2.json</file>
+
+          <file>images/backspace-868482.svg</file>
+          <file>images/enter-868482.svg</file>
+          <file>images/globe-868482.svg</file>
+          <file>images/hidekeyboard-868482.svg</file>
+          <file>images/shift-80c342.svg</file>
+          <file>images/shift-868482.svg</file>
+          <file>images/shift-c5d6b6.svg</file>
+     </qresource>
+</RCC>
