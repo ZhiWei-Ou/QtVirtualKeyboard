@@ -83,10 +83,8 @@
                         "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
                         "pressed": "background-color: lightgray;" }
                 },
-                {"type": "function", "key": "changeLanguage", "enum": -1, "weight": 154, "icon": ":assets/images/globe-868482.svg" },
-                {"type": "misc", "key": "space", "enum": 32, "weight": 868, "alternative": "Symbol"},
+                {"type": "misc", "key": "space", "enum": 32, "weight": 1176, "alternative": "English"},
                 {"type": "symbol","key": "……", "enum": 46, "weight": 154, "alternative": "……" },
-                {"type": "function", "key": "symbolMode", "enum": -1, "weight": 154, "alternative": ":-)" },
                 {"type": "function", "key": "hideKeyboard", "enum": -1, "weight": 200, "icon": ":assets/images/hidekeyboard-868482.svg",
                     "style": {
                         "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
