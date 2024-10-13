@@ -1,0 +1,26 @@
+
+# Visual Studio Code
+/.vscode/
+/.vscode-insiders/
+/.vscode-server/
+/.vscode-server-insiders/
+/.vscode-server/
+/.vscode-server-insiders/
+/.vscode/
+/.vscode-insiders/
+/.vscode-server/
+
+# Android Studio
+/.android/
+
+# Gradle
+/build/
+
+# MacOS
+/.DS_Store
+
+# Other
+/.cache/
+/dist/
+compile_commands.json
+
