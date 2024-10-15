@@ -65,6 +65,9 @@ QSize KeyboardAbstractIC::keyboardScaleSize(float currentWidth)
 void KeyboardAbstractIC::keyClicked(QPushButton *b, Qt::Key k, QString type, QString func)
 {
     if (type == "letter" || type == "symbol") {
+        if (b->text() == "&&") {
+            return sendKeyClick(k, "&");
+        }
         return sendKeyClick(k, b->text());
     } else if (type == "function") {
         if (func == "hideKeyboard") {
