@@ -157,7 +157,8 @@ void PlatformInputContext::setFocusObject(QObject *object)
         for (auto p : m_keyboards) {
             if (p) {
                 p->scale(m_screenSize.width());
-                p->move(w->x() + 0, w->y() + (m_screenSize.height()/2 - p->height()/2));
+                // p->move(w->x() + 0, w->y() + (m_screenSize.height()/2 - p->height()/2));
+                p->move(w->x() + 0, w->y() + m_screenSize.height() - p->height());
                 connect(p, &KeyboardAbstractIC::Sig_FunctionKeyEvent, this, &PlatformInputContext::FunctionKeyHandler);
             }
         }

@@ -23,4 +23,5 @@
 /.cache/
 /dist/
 compile_commands.json
+compiler.sh
 

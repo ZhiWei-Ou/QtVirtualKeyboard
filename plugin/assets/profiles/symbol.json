@@ -42,7 +42,7 @@
                 {"type": "symbol","key": "@", "enum": 64, "weight": 56 },
                 {"type": "symbol","key": "#", "enum": 35, "weight": 56 },
                 {"type": "symbol","key": "%", "enum": 37, "weight": 56 },
-                {"type": "symbol","key": "&", "enum": 38, "weight": 56, "alternative": "&" },
+                {"type": "symbol","key": "&&", "enum": 38, "weight": 56, "alternative": "&&" },
                 {"type": "symbol","key": "*", "enum": 71, "weight": 56, "alternative": "*" },
                 {"type": "symbol","key": "-", "enum": 45, "weight": 56 },
                 {"type": "symbol","key": "+", "enum": 43, "weight": 56 },
@@ -83,7 +83,7 @@
                         "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
                         "pressed": "background-color: lightgray;" }
                 },
-                {"type": "misc", "key": "space", "enum": 32, "weight": 1176, "alternative": "English"},
+                {"type": "misc", "key": "space", "enum": 32, "weight": 1176, "alternative": "Symbol"},
                 {"type": "symbol","key": ".", "enum": 46, "weight": 154 },
                 {"type": "function", "key": "hideKeyboard", "enum": -1, "weight": 200, "icon": ":assets/images/hidekeyboard-868482.svg",
                     "style": {

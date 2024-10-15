@@ -86,7 +86,7 @@
             "spacing": 5,
             "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
             "keys": [
-                {"type": "function", "key": "symbolMode", "enum": -1, "weight": 217, "alternative": "#123",
+                {"type": "function", "key": "symbolMode", "enum": -1, "weight": 217, "alternative": "&&123",
                     "style": {
                         "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
                         "pressed": "background-color: lightgray;" }
