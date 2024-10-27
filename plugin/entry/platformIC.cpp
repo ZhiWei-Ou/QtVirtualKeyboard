@@ -8,6 +8,7 @@
  * @brief 
  */
 #include "platformIC.h"
+#include "common.h"
 #include <QLocale>
 #include <QRectF>
 #include <QDebug>
@@ -16,10 +17,6 @@
 #include <QWindow>
 #include <QStackedWidget>
 #include <QtCore/qloggingcategory.h>
-
-#include "en/en_UK.h"
-#include "symbol/symbol.h"
-#include "symbol/symbol2.h"
 
 QLoggingCategory qtKeyboardCategory("qtkeyboard.platformIC");
 
@@ -31,7 +28,7 @@ __attribute__((weak)) QSize GlobGetScreenSize(bool &ok)
 }
 
 PlatformInputContext::PlatformInputContext(QPlatformInputContextPlugin *pluginCtx)
-    : QPlatformInputContext()
+    : QPlatformInputContext(), m_screenSize(0, 0), m_keyboardUiInitOnceFlag(false), m_keyboardMng(Q_NULLPTR)
 {
     bool ok = false;
     QSize size = GlobGetScreenSize(ok);
@@ -98,8 +95,12 @@ void PlatformInputContext::showInputPanel()
 {
     qCDebug(qtKeyboardCategory) << "PlatformInputContext::showInputPanel()";
 
-    if (m_keyboards[page_en_uk]) {
-        m_keyboards[page_en_uk]->show();
+    // if (m_keyboards[page_en_uk]) {
+    //     m_keyboards[page_en_uk]->show();
+    // }
+    
+    if (m_keyboardMng) {
+        m_keyboardMng->DefaultShow();
     }
 }
 
@@ -107,8 +108,8 @@ void PlatformInputContext::hideInputPanel()
 {
     qCDebug(qtKeyboardCategory) << "PlatformInputContext::hideInputPanel()";
 
-    for (auto w : m_keyboards) {
-        w->hide();
+    if (m_keyboardMng) {
+        m_keyboardMng->HideAll();
     }
 }
 
@@ -139,9 +140,7 @@ void PlatformInputContext::setFocusObject(QObject *object)
 {
     qCDebug(qtKeyboardCategory) << "PlatformInputContext::setFocusObject(object:" << object << ")";
 
-
-    static bool flag = false;
-    if (flag) {
+    if (m_keyboardUiInitOnceFlag) {
         return;
     } else {
         QWindow *w = QGuiApplication::focusWindow();
@@ -151,49 +150,17 @@ void PlatformInputContext::setFocusObject(QObject *object)
                                 << "Size: " << m_screenSize;
         }
 
-        m_keyboards[page_en_uk] = new Keyboard_EN_UK(this);
-        m_keyboards[page_symbol_1] = new Keyboard_Symbol(this);
-        m_keyboards[page_symbol_2] = new Keyboard_Symbol2(this);
-        for (auto p : m_keyboards) {
-            if (p) {
-                p->scale(m_screenSize.width());
-                // p->move(w->x() + 0, w->y() + (m_screenSize.height()/2 - p->height()/2));
-                p->move(w->x() + 0, w->y() + m_screenSize.height() - p->height());
-                connect(p, &KeyboardAbstractIC::Sig_FunctionKeyEvent, this, &PlatformInputContext::FunctionKeyHandler);
-            }
+        if (!m_keyboardMng) {
+            m_keyboardMng = new NAMESPACE::KeyboardMng(
+                    QStringList() << ":assets/profiles/refact/en_xxxx.json",
+                    this);
+            m_keyboardMng->Scale(m_screenSize.width());
+            m_keyboardMng->SetDirection(NAMESPACE::KeyboardMng::FloatBottom, w);
         }
-        flag = true;
+
+        m_keyboardUiInitOnceFlag = true;
     }
-}   
-
-void PlatformInputContext::FunctionKeyHandler(KeyboardAbstractIC::FunctionKeyType type)
-{
-    switch (type) {
-    case KeyboardAbstractIC::Alphabet:
-        m_keyboards[page_en_uk]->show();
-
-        m_keyboards[page_symbol_1]->hide();
-        m_keyboards[page_symbol_2]->hide();
-        break;
-    case KeyboardAbstractIC::Symbol_1:
-        m_keyboards[page_symbol_1]->show();
-
-        m_keyboards[page_symbol_2]->hide();
-        m_keyboards[page_en_uk]->hide();
-        break;
-    case KeyboardAbstractIC::Symbol_2:
-        m_keyboards[page_symbol_2]->show();
-
-        m_keyboards[page_symbol_1]->hide();
-        m_keyboards[page_en_uk]->hide();
-        break;
-    case KeyboardAbstractIC::HideKeyboard:
-        hideInputPanel();
-        break;
-    default:
-        break;
-    }
-}
+} 
 
 void PlatformInputContext::sendKeyEvent(QKeyEvent *event)
 {

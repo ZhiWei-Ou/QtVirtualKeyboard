@@ -15,7 +15,9 @@
 #include <QSize>
 #include <QKeyEvent>
 #include <QMap>
-#include "keyboardabstractIC.h"
+
+#include "common.h"
+#include "keyboardMng.h"
 
 class PlatformInputContext : public QPlatformInputContext
 {
@@ -52,12 +54,7 @@ public:
 
 private:
     QSize m_screenSize;
-
-    int page_en_uk = 0;
-    int page_symbol_1 = 1;
-    int page_symbol_2 = 2;
-    QMap<int, KeyboardAbstractIC*> m_keyboards;
-
-    void FunctionKeyHandler(KeyboardAbstractIC::FunctionKeyType type);
+    bool m_keyboardUiInitOnceFlag;
+    NAMESPACE::KeyboardMng *m_keyboardMng;
 };
 

@@ -16,7 +16,7 @@
             "spacing": 5,
             "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
             "keys": [
-                { "type": "letter", "key": "q", "enum": 81, "weight": 1 },
+                {"type": "letter", "key": "q", "enum": 81, "weight": 1 },
                 {"type": "letter", "key": "w", "enum": 87, "weight": 1 },
                 {"type": "letter", "key": "e", "enum": 69, "weight": 1 },
                 {"type": "letter", "key": "r", "enum": 82, "weight": 1 },

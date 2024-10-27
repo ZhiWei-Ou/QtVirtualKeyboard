@@ -7,6 +7,7 @@ set(WorkSpace
     ${CMAKE_CURRENT_SOURCE_DIR}/infra
     ${CMAKE_CURRENT_SOURCE_DIR}/infra/en
     ${CMAKE_CURRENT_SOURCE_DIR}/infra/symbol
+    ${CMAKE_CURRENT_SOURCE_DIR}/infra/refact
     ${CMAKE_CURRENT_SOURCE_DIR}/keyboards
 )
 

@@ -8,6 +8,9 @@
           <file>profiles/retro/symbol.json</file>
           <file>profiles/retro/symbol2.json</file>
 
+          <file>profiles/refact/en_xxxx.json</file>
+          <file>profiles/refact/basic.qss</file>
+
           <file>images/backspace-868482.svg</file>
           <file>images/enter-868482.svg</file>
           <file>images/globe-868482.svg</file>

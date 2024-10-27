@@ -1,0 +1,97 @@
+{
+    "name": "Symbol2_Keyboard",
+    "model": "symbol_index_1",
+    "category": "Symbol2(Retro)",
+    "description": "Qt keyboard plugin, Layout: Symbol2(Retro)",
+    "version": "1.0.0",
+    "btnStyle":
+    {
+        "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #2c2b29; color: #ffffff;font-size: 18px;icon-size: 28px",
+        "pressed": "background-color: gray;",
+        "hover": ""
+    },
+    "bgColor": "#000000",
+    "layout": [
+        {
+            "row": 0,
+            "spacing": 5,
+            "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
+            "keys": [
+                { "type": "symbol", "key": "~", "enum": 49, "weight": 1, "alternative": "~" },
+                {"type": "symbol", "key": "`", "enum": 50, "weight": 1, "alternative": "`" },
+                {"type": "symbol", "key": "|", "enum": 51, "weight": 1, "alternative": "|" },
+                {"type": "symbol", "key": ".", "enum": 52, "weight": 1, "alternative": "." },
+                {"type": "symbol", "key": "√", "enum": 53, "weight": 1, "alternative": "√" },
+                {"type": "symbol", "key": "÷", "enum": 54, "weight": 1, "alternative": "÷" },
+                {"type": "symbol", "key": "×", "enum": 55, "weight": 1, "alternative": "×" },
+                {"type": "symbol", "key": "½", "enum": 56, "weight": 1, "alternative": "½" },
+                {"type": "symbol", "key": "{", "enum": 57, "weight": 1, "alternative": "{" },
+                {"type": "symbol", "key": "}", "enum": 48, "weight": 1, "alternative": "}" },
+                {"type": "misc", "key": "backspace", "enum": 16777219, "weight": 1, "icon": ":assets/images/backspace-868482.svg",
+                    "style": {
+                        "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
+                        "pressed": "background-color: lightgray;" }
+                }
+            ]
+        },
+        {
+            "row": 1,
+            "spacing": 5,
+            "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
+            "keys": [
+                {"type": "holder", "key": "spacer", "enum": -1, "weight": 35 },
+                {"type": "symbol","key": "$", "enum": 64, "weight": 56, "alternative": "$" },
+                {"type": "symbol","key": "€", "enum": 35, "weight": 56, "alternative": "€" },
+                {"type": "symbol","key": "£", "enum": 37, "weight": 56, "alternative": "£" },
+                {"type": "symbol","key": "¢", "enum": 38, "weight": 56, "alternative": "¢" },
+                {"type": "symbol","key": "￥", "enum": 71, "weight": 56, "alternative": "￥" },
+                {"type": "symbol","key": "=", "enum": 45, "weight": 56, "alternative": "=" },
+                {"type": "symbol","key": "§", "enum": 43, "weight": 56, "alternative": "§" },
+                {"type": "symbol","key": "[", "enum": 40, "weight": 56, "alternative": "[" },
+                {"type": "symbol","key": "]", "enum": 41, "weight": 56, "alternative": "]" },
+                {"type": "misc","key": "enter", "enum": 16777221, "weight": 72, "icon": ":assets/images/enter-868482.svg",
+                    "style": {
+                        "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
+                        "pressed": "background-color: lightgray;" }
+                }
+            ]
+        },
+        {
+            "row": 2,
+            "spacing": 5,
+            "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
+            "keys": [
+                {"type": "function","key": "flipTo1", "enum": -1, "weight": 156,"alternative": "2/2" },
+                {"type": "symbol","key": "_", "enum": 33, "weight": 156, "alternative": "_" },
+                {"type": "symbol","key": "™", "enum": 58, "weight": 156, "alternative": "™" },
+                {"type": "symbol","key": "®", "enum": 60, "weight": 156, "alternative": "®" },
+                {"type": "symbol","key": "«", "enum": 62, "weight": 156, "alternative": "«" },
+                {"type": "symbol","key": "»", "enum": 39, "weight": 156, "alternative": "»" },
+                {"type": "symbol","key": "“", "enum": 58, "weight": 156, "alternative": "“" },
+                {"type": "symbol","key": "”", "enum": 59, "weight": 156, "alternative": "”" },
+                {"type": "symbol","key": "\\", "enum": 47, "weight": 156, "alternative": "\\" },
+                {"type": "symbol","key": "^", "enum": 63, "weight": 204, "alternative": "^" },
+                {"type": "function","key": "flipTo1", "enum": -1, "weight": 156,"alternative": "2/2" }
+            ]
+        },
+        {
+            "row": 3,
+            "spacing": 5,
+            "topM": 1, "bottomM": 1, "leftM": 1, "rightM": 1,
+            "keys": [
+                {"type": "function", "key": "alphabet", "enum": -1, "weight": 217, "alternative": "ABC",
+                    "style": {
+                        "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
+                        "pressed": "background-color: lightgray;" }
+                },
+                {"type": "misc", "key": "space", "enum": 32, "weight": 1176, "alternative": "Symbol"},
+                {"type": "symbol","key": "……", "enum": 46, "weight": 154, "alternative": "……" },
+                {"type": "function", "key": "hideKeyboard", "enum": -1, "weight": 200, "icon": ":assets/images/hidekeyboard-868482.svg",
+                    "style": {
+                        "normal": "border: 1px solid transparent; border-radius: 5px; background-color: #151212; color: #ffffff;font-size: 18px;icon-size: 28px",
+                        "pressed": "background-color: lightgray;" }
+                }
+            ]
+        }
+    ]
+}

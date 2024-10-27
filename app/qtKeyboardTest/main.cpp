@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     // Qt Application
     // log format && filter
     qInstallMessageHandler(myMessageHandler);
-    qputenv("QT_LOGGING_RULES",QByteArray("qtkeyboard.*=true\nother.*=true"));
+    qputenv("QT_LOGGING_RULES",QByteArray("qtkeyboard.*=false\nother.*=false"));
 
     // Keyboard Plugin Environment
     qputenv("QT_IM_MODULE",QByteArray("QtKeyboard"));

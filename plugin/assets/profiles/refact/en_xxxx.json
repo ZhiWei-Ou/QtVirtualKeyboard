@@ -1,0 +1,106 @@
+{
+    "name": "EN_UK_Keyboard",
+    "model": "alphabet",
+    "category": "English(UK)",
+    "description": "Qt keyboard plugin, Layout: English (British)",
+    "version": "1.0.0",
+
+    "keyboard": {
+        "style": ":assets/profiles/refact/basic.qss",
+        "layout": [
+            {
+                "row": 0,
+                "spacing": 5,
+                "margin": {
+                    "top": 1,
+                    "bottom": 1,
+                    "left": 1,
+                    "right": 1
+                },
+                "keys": [
+                    {"type": "alphabet", "key": "q", "pretty": "q", "weight": 1},
+                    {"type": "alphabet", "key": "w", "pretty": "w", "weight": 1},
+                    {"type": "alphabet", "key": "e", "pretty": "e", "weight": 1},
+                    {"type": "alphabet", "key": "r", "pretty": "r", "weight": 1},
+                    {"type": "alphabet", "key": "t", "pretty": "t", "weight": 1},
+                    {"type": "alphabet", "key": "y", "pretty": "y", "weight": 1},
+                    {"type": "alphabet", "key": "u", "pretty": "u", "weight": 1},
+                    {"type": "alphabet", "key": "i", "pretty": "i", "weight": 1},
+                    {"type": "alphabet", "key": "o", "pretty": "o", "weight": 1},
+                    {"type": "alphabet", "key": "p", "pretty": "p", "weight": 1},
+                    {"type": "function", "key": "backspace", "pretty": "Backspace",
+                        "pixmap": ":assets/images/backspace-868482.svg",
+                        "weight": 1}
+                ]
+            },
+            {
+                "row": 1,
+                "spacing": 5,
+                "margin": {
+                    "top": 1,
+                    "bottom": 1,
+                    "left": 1,
+                    "right": 1
+                },
+                "keys": [
+                    {"type": "misc", "key": "spacer", "weight": 35},
+                    {"type": "alphabet", "key": "a", "pretty": "a", "weight": 56},
+                    {"type": "alphabet", "key": "s", "pretty": "s", "weight": 56},
+                    {"type": "alphabet", "key": "d", "pretty": "d", "weight": 56},
+                    {"type": "alphabet", "key": "f", "pretty": "f", "weight": 56},
+                    {"type": "alphabet", "key": "g", "pretty": "g", "weight": 56},
+                    {"type": "alphabet", "key": "h", "pretty": "h", "weight": 56},
+                    {"type": "alphabet", "key": "j", "pretty": "j", "weight": 56},
+                    {"type": "alphabet", "key": "k", "pretty": "k", "weight": 56},
+                    {"type": "alphabet", "key": "l", "pretty": "l", "weight": 56},
+                    {"type": "function", "key": "enter", "pretty": "Enter",
+                        "pixmap": ":assets/images/enter-868482.svg", "weight": 72}
+                ]
+            },
+            {
+                "row": 2,
+                "spacing": 5,
+                "margin": {
+                    "top": 1,
+                    "bottom": 1,
+                    "left": 1,
+                    "right": 1
+                },
+                "keys": [
+                    {"type": "function", "key": "shift", "pretty": "Shift",
+                        "pixmap": ":assets/images/shift-80c342.svg",
+                        "weight": 156},
+                    {"type": "alphabet", "key": "z", "pretty": "z", "weight": 156},
+                    {"type": "alphabet", "key": "x", "pretty": "x", "weight": 156},
+                    {"type": "alphabet", "key": "c", "pretty": "c", "weight": 156},
+                    {"type": "alphabet", "key": "v", "pretty": "v", "weight": 156},
+                    {"type": "alphabet", "key": "b", "pretty": "b", "weight": 156},
+                    {"type": "alphabet", "key": "n", "pretty": "n", "weight": 156},
+                    {"type": "alphabet", "key": "m", "pretty": "m", "weight": 156},
+                    {"type": "symbol", "key": ",", "pretty": ",", "weight": 156},
+                    {"type": "symbol", "key": ".", "pretty": ".", "weight": 156},
+                    {"type": "function", "key": "shift", "pretty": "Shift",
+                        "pixmap": ":assets/images/shift-80c342.svg",
+                        "weight": 204}
+                ]
+            },
+            {
+                "row": 3,
+                "spacing": 5,
+                "margin": {
+                    "top": 1,
+                    "bottom": 1,
+                    "left": 1,
+                    "right": 1
+                },
+                "keys": [
+                    {"type": "event", "key": "symbol", "pretty": "&&123", "weight": 217},
+                    {"type": "function", "key": "space", "pretty": "English", "weight": 1176},
+                    {"type": "symbol", "key": "@", "pretty": "@", "weight": 154},
+                    {"type": "event", "key": "hide", "pixmap": ":assets/images/hidekeyboard-868482.svg",
+                        "weight": 195}
+                ]
+            }
+        ]
+    }
+}
