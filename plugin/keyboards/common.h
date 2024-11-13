@@ -95,7 +95,8 @@ enum Key : int {
 
     /* Event */
     Key_Event = 0x02000001,
-    Key_Hide = 0x02000002, Key_Symbol = 0x02000003, Key_Number = 0x02000004, Key_Alpha = 0x02000005,
+    Key_Hide = 0x02000002, Key_Symbol = 0x02000003,
+    Key_Number = 0x02000004, Key_Alpha = 0x02000005, Key_ChangeKeyboard = 0x02000006,
     Key_Event2 = 0x020000ff,
 
     /* misc */

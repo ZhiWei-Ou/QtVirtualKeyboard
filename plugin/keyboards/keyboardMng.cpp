@@ -9,6 +9,8 @@
  */
 #include "keyboardMng.h"
 #include <QGuiApplication>
+#include <QtCore/qglobal.h>
+#include <QDebug>
 
 NAMESPACE_KEYBOARD_BEGIN
 
@@ -35,16 +37,18 @@ KeyboardMng::KeyboardMng(const QStringList &profiles, QPlatformInputContext *ctx
 
         connect(k, SIGNAL(keyboardHide()), this, SLOT(onKeyboardHide(onKeyboardHideAll())));
 
-        connect(k, &Keyboard::keyboardNumber, this, [this]() {
-            onChangeKeyboard("number");
-        });
-        connect(k, &Keyboard::keyboardSymbol, this, [this]() {
-            onChangeKeyboard("symbol");            
-        });
+        connect(k, &Keyboard::keyboardWanaChange, this, &KeyboardMng::JustShowSpec);
 
-        connect(k, &Keyboard::keyboardAlphabet, this, [this]() {
-            onChangeKeyboard("alphabet");            
-        });
+        // connect(k, &Keyboard::keyboardNumber, this, [this]() {
+        //     onChangeKeyboard("number");
+        // });
+        // connect(k, &Keyboard::keyboardSymbol, this, [this]() {
+        //     onChangeKeyboard("symbol");            
+        // });
+        //
+        // connect(k, &Keyboard::keyboardAlphabet, this, [this]() {
+        //     onChangeKeyboard("alphabet");            
+        // });
     }
 
     // connect(m_showKeyboardSignalMapper, SIGNAL(mapped(QString)), this, SLOT(onKeyboardShow(QString)));
@@ -64,6 +68,23 @@ void KeyboardMng::onKeyboardHide(QString &name)
 void KeyboardMng::onKeyboardHideAll()
 {
 
+}
+
+void KeyboardMng::JustShowSpec(const QString &name)
+{
+    qDebug() << "-- JustShowSpec: " << name;
+    Keyboard *spec = Q_NULLPTR;
+    for (auto &&k : m_keyboards) {
+        if (k->Name() == name) {
+            spec = k;
+        } else {
+            k->Hide();
+        }
+    }
+
+    if (spec) {
+        spec->Show();
+    }
 }
 
 void KeyboardMng::DefaultShow()

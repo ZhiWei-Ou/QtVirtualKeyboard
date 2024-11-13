@@ -118,8 +118,8 @@ void NAMESPACE::Keyboard::createKeyboardUI()
             KeyBtn *btn = new KeyBtn(key, this);
             l->addWidget(btn, key.weight);
 
-            connect(btn, SIGNAL(KeyPressed(KeyType, Key)), SLOT(onKeyPress(KeyType, Key)));
-            connect(btn, SIGNAL(KeyReleased(KeyType, Key)), SLOT(onKeyRelease(KeyType, Key)));
+            connect(btn, SIGNAL(KeyPressed(KeyType, Key, QVariant)), SLOT(onKeyPress(KeyType, Key, QVariant)));
+            connect(btn, SIGNAL(KeyReleased(KeyType, Key, QVariant)), SLOT(onKeyRelease(KeyType, Key, QVariant)));
         }
     }
 
@@ -159,17 +159,17 @@ void NAMESPACE::Keyboard::Hide()
     }
 }
 
-void NAMESPACE::Keyboard::onKeyPress(KeyType t, Key k)
+void NAMESPACE::Keyboard::onKeyPress(KeyType t, Key k, QVariant data)
 {
     return onKeyEvent(QKeyEvent::KeyPress, t, k);
 }
 
-void NAMESPACE::Keyboard::onKeyRelease(KeyType t, Key k)
+void NAMESPACE::Keyboard::onKeyRelease(KeyType t, Key k, QVariant data)
 {
     return onKeyEvent(QKeyEvent::KeyRelease, t, k);
 }
 
-void NAMESPACE::Keyboard::onKeyEvent(int type, KeyType t, Key k)
+void NAMESPACE::Keyboard::onKeyEvent(int type, KeyType t, Key k, QVariant data)
 {
     auto *btn = dynamic_cast<KeyBtn *>(sender());
 
@@ -196,7 +196,7 @@ void NAMESPACE::Keyboard::onKeyEvent(int type, KeyType t, Key k)
         break;
     case KeyType::Event:
         {
-            onEvent(k);
+            onEvent(k, data);
         }
         break;
     case KeyType::Misc:
@@ -206,7 +206,7 @@ void NAMESPACE::Keyboard::onKeyEvent(int type, KeyType t, Key k)
     }
 }
 
-void NAMESPACE::Keyboard::onEvent(Key k)
+void NAMESPACE::Keyboard::onEvent(Key k, QVariant v)
 {
     switch (k) {
     case Key_Hide:
@@ -220,6 +220,9 @@ void NAMESPACE::Keyboard::onEvent(Key k)
         break;
     case Key_Alpha:
         emit keyboardAlphabet();
+        break;
+    case Key_ChangeKeyboard:
+        emit keyboardWanaChange(v.toString());
         break;
     default:
         break;

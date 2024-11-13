@@ -71,7 +71,8 @@ Key string2Key(const QString& sequence) {
         {"option", Key::Key_Option}, {"delete", Key::Key_Delete}, {"up", Key::Key_Up}, {"down", Key::Key_Down},
         {"left", Key::Key_Left}, {"right", Key::Key_Right},
 
-        {"hide", Key::Key_Hide}, {"symbol", Key::Key_Symbol}, {"number", Key::Key_Number}, {"alpha", Key::Key_Alpha},
+        {"hide", Key::Key_Hide}, {"symbol", Key::Key_Symbol}, {"number", Key::Key_Number},
+        {"alpha", Key::Key_Alpha}, {"change", Key::Key_ChangeKeyboard},
 
         {"spacer", Key::Key_Specer}
     };
@@ -99,7 +100,8 @@ QString key2String(const Key& key) {
         {Key::Key_Option, "option"}, {Key::Key_Delete, "delete"}, {Key::Key_Up, "up"}, {Key::Key_Down, "down"},
         {Key::Key_Left, "left"}, {Key::Key_Right, "right"},
 
-        {Key::Key_Hide, "hide"}, {Key::Key_Symbol, "symbol"}, {Key::Key_Number, "number"}, {Key::Key_Alpha, "alpha"},
+        {Key::Key_Hide, "hide"}, {Key::Key_Symbol, "symbol"}, {Key::Key_Number, "number"},
+        {Key::Key_Alpha, "alpha"}, {Key::Key_ChangeKeyboard, "change"},
 
         {Key::Key_Specer, "spacer"},
     };

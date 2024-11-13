@@ -42,8 +42,8 @@ NAMESPACE::KeyBtn::KeyBtn(const KeyMeta &meta, QWidget *parent, QSizePolicy::Pol
 
     setSizePolicy(hor, ver);
 
-    connect(this, &QPushButton::pressed, [this]() { emit KeyPressed(m_meta.type, m_meta.key); });
-    connect(this, &QPushButton::released, [this]() { emit KeyReleased(m_meta.type, m_meta.key); });
+    connect(this, &QPushButton::pressed, [this]() { emit KeyPressed(m_meta.type, m_meta.key, QVariant(m_meta.to)); });
+    connect(this, &QPushButton::released, [this]() { emit KeyReleased(m_meta.type, m_meta.key, QVariant(m_meta.to)); });
 }
 
 NAMESPACE::KeyBtn::~KeyBtn()

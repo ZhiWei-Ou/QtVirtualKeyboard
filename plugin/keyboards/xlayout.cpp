@@ -30,6 +30,7 @@ NAMESPACE::KeyMeta::KeyMeta(const QJsonObject &obj)
     pixmap = obj.value("pixmap").toString();
     style = obj.value("style").toString();
     weight = obj.value("weight").toInt();
+    to = obj.value("to").toString();
 }
 
 

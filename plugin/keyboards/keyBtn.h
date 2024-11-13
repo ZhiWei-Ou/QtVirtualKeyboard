@@ -37,8 +37,8 @@ public:
     void SetObjectName(const QString &name);
 
 signals:
-    void KeyPressed(KeyType, Key);
-    void KeyReleased(KeyType, Key);
+    void KeyPressed(KeyType, Key, QVariant = QVariant());
+    void KeyReleased(KeyType, Key, QVariant = QVariant());
 
 private:
     KeyMeta m_meta;

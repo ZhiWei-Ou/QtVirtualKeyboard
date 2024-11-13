@@ -50,16 +50,17 @@ protected:
     void createKeyboardUI();
 
 private slots:
-    void onKeyPress(KeyType, Key);
-    void onKeyRelease(KeyType, Key);
-    void onKeyEvent(int,KeyType, Key);
-    void onEvent(Key);
+    void onKeyPress(KeyType, Key, QVariant = QVariant());
+    void onKeyRelease(KeyType, Key, QVariant = QVariant());
+    void onKeyEvent(int,KeyType, Key, QVariant = QVariant());
+    void onEvent(Key, QVariant = QVariant());
 
 signals:
     void keyboardHide();
     void keyboardNumber();
     void keyboardSymbol();
     void keyboardAlphabet();
+    void keyboardWanaChange(QString other);
 
 private:
     QPlatformInputContext *m_inputCtx;

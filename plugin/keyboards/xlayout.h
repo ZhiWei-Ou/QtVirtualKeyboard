@@ -40,6 +40,7 @@ struct KeyMeta {
     QString icon;
     QString pixmap;
     QString style;
+    QString to;
 
     KeyMeta() = default;
     explicit KeyMeta(const QJsonObject &obj);

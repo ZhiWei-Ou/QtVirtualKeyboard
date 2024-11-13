@@ -31,6 +31,7 @@ public:
     enum Direction : int {FloatBottom};
     void SetDirection(int direction, QWindow *bench);
     void Scale(float currentWidth);
+    void JustShowSpec(const QString &name);
     void DefaultShow();
     void HideAll();
 

@@ -94,7 +94,7 @@
                     "right": 1
                 },
                 "keys": [
-                    {"type": "event", "key": "symbol", "pretty": "&&123", "weight": 217},
+                    {"type": "event", "key": "change", "to": "Symbol_Keyboard_1", "pretty": "&&123", "weight": 217},
                     {"type": "function", "key": "space", "pretty": "English", "weight": 1176},
                     {"type": "symbol", "key": "@", "pretty": "@", "weight": 154},
                     {"type": "event", "key": "hide", "pixmap": ":assets/images/hidekeyboard-868482.svg",
